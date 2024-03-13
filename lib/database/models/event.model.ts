@@ -16,7 +16,7 @@ export interface IEvent extends Document {
   organizer: { _id: string, firstName: string, lastName: string }
 }
 
-const eventSchema = new Schema({
+const EventSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String },
   location: { type: String },
@@ -31,6 +31,6 @@ const eventSchema = new Schema({
   organizer: { type: Schema.Types.ObjectId, ref: 'User' },
 })
 
-const Event = models.Event || model('Event', eventSchema);
+const Event = models.Event || model('Event', EventSchema);
 
 export default Event;
